@@ -51,4 +51,4 @@ This project demonstrates end-to-end data analysis, from raw data preparation to
 **Developed by Gergess Magdy**
 *Feel free to reach out for any questions regarding the data model or visualizations!*
 
-*LinkedIn: [https://www.linkedin.com/in/gergess-magdy-b93790311ا]*
+*LinkedIn: [www.linkedin.com/in/gergess-magdy-b93790311]*
