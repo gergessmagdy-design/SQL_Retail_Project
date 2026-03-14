@@ -1,54 +1,73 @@
 # 📊 Retail Sales & Customer Analytics (SQL & Power BI)
 
 ## 📌 Project Overview
-This project is an end-to-end Data Analytics solution. It demonstrates the full data lifecycle: from raw data preparation and transformation using **SQL Server (T-SQL)**, to building an interactive, insightful Business Intelligence dashboard using **Power BI**. The project focuses on uncovering business trends, customer purchasing behavior, and operational efficiency over the 1997-1998 period.
+This project analyzes retail sales data from **1997–1998** using **SQL Server (T-SQL)** and **Power BI** to uncover key business insights related to revenue growth, customer behavior, and product performance.
+
+The project demonstrates the full **data analytics workflow**, including data preparation, transformation, analytical querying, and building an interactive Business Intelligence dashboard to support data-driven decision making.
 
 ---
 
-## 🚀 Key Analytical Insights
-* **Financial Growth:** Achieved a **112.18% year-over-year revenue growth**, surging from $0.57M to $1.20M.
-* **Profitability:** Maintained a robust **59% profit margin**, showcasing efficient cost-to-revenue management.
-* **Customer Behavior:** Identified "Professional" and "Skilled Manual" workers (earning $30K–$50K annually) as the primary drivers of revenue.
-* **Operational Quality:** Pinpointed products with high return rates (>2.5%) for potential quality control and packaging improvements.
+# 📂 Dataset Structure
+
+The dataset used in this project consists of multiple tables representing different aspects of the retail business, including customers, products, sales transactions, and returns.
+
+| Table Name | Description |
+|------------|-------------|
+| **Calendar** | A date dimension table used for time-based analysis such as year, quarter, and month trends. |
+| **Customers** | Contains customer demographic information including occupation, income level, and attributes used for customer segmentation. |
+| **Products** | Product catalog including product categories, subcategories, and pricing details. |
+| **Region** | Geographic dimension used to analyze sales performance across different regions. |
+| **Returns** | Records of returned products used to calculate return rates and analyze product quality. |
+| **Sales_1997** | Transactional sales data for the year **1997** used for sales performance analysis. |
+| **Sales_1998** | Transactional sales data for the year **1998** used for year-over-year comparison and growth analysis. |
+| **Stores** | Store information including store identifiers, store locations, and regional assignments. |
+
+These tables were integrated and transformed using **SQL Server (T-SQL)** to create a structured dataset for analytical reporting in Power BI.
 
 ---
 
-## 🛠️ Technical Stack & Workflow
-The project was executed through a structured data pipeline:
+# ❓ Business Questions
 
-### **1. Data Engineering (SQL)**
-* **Cleaning & Transformation:** Used `Prepare.sql` to combine transactional tables, handle null values, and calculate key metrics (`Amount`, `Profit`).
-* **Modeling:** Designed the database schema and created relationships using `Model.sql`.
-* **Analytical Queries:** Developed complex `Views` and queries in `SQLQuery.sql` to extract KPIs, analyze growth rates, and profile customers.
+This analysis aims to answer several key business questions:
 
-### **2. Data Visualization (Power BI)**
-* **Modeling:** Connected SQL Views to Power BI to ensure real-time data flow.
-* **Interactive Dashboard:** Built a comprehensive dashboard featuring:
-    * **Heat Maps:** For geographic sales distribution.
-    * **Time-Series Analysis:** To track quarterly performance.
-    * **Dynamic Slicers:** For filtering by region, product, and store.
+- How did revenue change between **1997 and 1998**?
+- Which **customer segments** generate the highest revenue?
+- Which **products have the highest return rates**?
+- Which **regions and stores perform best**?
+- What factors contribute most to **profitability**?
 
 ---
 
-## 📸 Dashboard Preview
+# 🚀 Key Analytical Insights
 
-| **Dashboard Overview** | **Customer Demographic & Behavioral Analysis** | **Key Analytical Insights** |
-| :---: | :---: | :---: |
-| ![Page 1](picture/pic_1.png) | ![Page 2](picture/pic_2.png) | ![Page 3](picture/pic_3.png) |
+### 📈 Revenue Growth
+Revenue increased by **112.18% year-over-year**, growing from **$0.57M to $1.20M**, indicating strong business growth.
+
+### 💰 Profitability
+The business maintained an average **59% profit margin**, demonstrating efficient cost management and pricing strategy.
+
+### 👥 Customer Segments
+Customers in the **"Professional"** and **"Skilled Manual"** occupations with annual incomes between **$30K–$50K** were identified as the primary revenue drivers.
+
+### 📦 Product Quality
+Products with **return rates above 2.5%** were identified, highlighting potential opportunities for **quality control and packaging improvements**.
 
 ---
 
-## 💡 Key Skills Showcase
-* **Data Wrangling:** Expert use of SQL to clean and prepare complex datasets.
-* **Business Intelligence:** Ability to translate business goals into measurable KPIs.
-* **Data Storytelling:** Transforming complex data into easy-to-read, actionable visuals.
+# 🛠️ Technical Stack
+
+### Data Processing
+- SQL Server (T-SQL)
+- Data Cleaning and Transformation
+- Analytical SQL Queries
+- SQL Views for Reporting
+
+### Data Visualization
+- Power BI
+- Interactive Dashboard Design
+- KPI Development
+- Data Storytelling
 
 ---
 
-## 📬 Contact & Feedback
-This project demonstrates end-to-end data analysis, from raw data preparation to actionable business insights.
-
-**Developed by Gergess Magdy**
-*Feel free to reach out for any questions regarding the data model or visualizations!*
-
-*LinkedIn: [www.linkedin.com/in/gergess-magdy-b93790311]*
+# ⚙️ Data Workflow
