@@ -34,7 +34,7 @@ The project was executed through a structured data pipeline:
 
 | **Dashboard Overview** | **Insights & Customer Spend** | **Analytical Trends** |
 | :---: | :---: | :---: |
-| ![Page 1](picture/pic_1.jpg) | ![Page 2](picture/pic_2.jpg) | ![Page 3](picture/pic_3.jpg) |
+| ![Page 1](picture/pic_1.png) | ![Page 2](picture/pic_2.png) | ![Page 3](picture/pic_3.png) |
 
 ---
 
