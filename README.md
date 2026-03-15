@@ -398,19 +398,6 @@ This structure keeps the project organized and makes it easier for analysts and 
 
 ---
 
-# 🖼 Dashboard Preview
-
-<!-- Use HTML for bigger images on GitHub -->
-<p align="center">
-  <img src="picture/Diagram.png" width="700"/>
-  <br>
-  <img src="picture/pic_1.png" width="300"/>
-  <img src="picture/pic_2.png" width="300"/>
-  <img src="picture/pic_3.png" width="300"/>
-</p>
-
----
-
 # 📸 Dashboard Preview
 
 |    **Dashboard Overview**    | **Customer Demographic & Behavioral Analysis** |  **Key Analytical Insights** |
