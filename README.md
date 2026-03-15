@@ -129,7 +129,158 @@ An interactive Power BI dashboard was created to visualize business performance 
 * Product return analysis
 
 ---
+---
 
+# 🗂️ Data Model
+
+This project follows a **Star Schema data model**, commonly used in data warehousing and business intelligence systems.
+
+The schema consists of **Fact Tables** that store transactional data and **Dimension Tables** that provide descriptive attributes used for analysis.
+
+---
+
+## ⭐ Fact Tables
+
+### **Fact_sales**
+
+The main transactional table that records every sales operation.
+
+| Column | Description |
+|------|-------------|
+| transaction_date | Date when the sale occurred |
+| stock_date | Date when the product was stocked |
+| product_id | Reference to the product sold |
+| customer_id | Reference to the customer |
+| store_id | Reference to the store |
+| quantity | Number of units sold |
+
+---
+
+### **Returns**
+
+Stores data about returned products.
+
+| Column | Description |
+|------|-------------|
+| return_date | Date when the product was returned |
+| product_id | Returned product |
+| store_id | Store where the return occurred |
+| quantity | Number of returned units |
+
+---
+
+## 📊 Dimension Tables
+
+### **Customers**
+
+Contains customer demographic information used for segmentation analysis.
+
+Key attributes include:
+
+- customer_id (Primary Key)
+- customer_acct_num
+- first_name
+- last_name
+- birthdate
+- marital_status
+- yearly_income
+- gender
+- education
+- occupation
+- homeowner
+- member_card
+
+---
+
+### **Products**
+
+Stores information about the products sold.
+
+Key attributes include:
+
+- product_id (Primary Key)
+- product_brand
+- product_name
+- product_sku
+- product_retail_price
+- product_cost
+- product_weight
+- recyclable
+- low_fat
+
+---
+
+### **Stores**
+
+Contains information about retail stores.
+
+Key attributes include:
+
+- store_id (Primary Key)
+- region_id
+- store_type
+- store_name
+- store_city
+- store_state
+- store_country
+- first_opened_date
+- last_remodel_date
+- total_sqft
+
+---
+
+### **Region**
+
+Defines geographical sales regions.
+
+| Column | Description |
+|------|-------------|
+| region_id | Primary key for region |
+| sales_district | Sales district |
+| sales_region | Sales region |
+
+---
+
+### **Calendar**
+
+Date dimension table used for time-based analysis.
+
+| Column | Description |
+|------|-------------|
+| Date | Primary key representing calendar date |
+
+---
+
+## 🔗 Relationships
+
+The schema follows **one-to-many relationships** between dimension tables and fact tables.
+
+| Dimension Table | Fact Table | Join Key |
+|----------------|------------|---------|
+| Customers | Fact_sales | customer_id |
+| Products | Fact_sales | product_id |
+| Products | Returns | product_id |
+| Stores | Fact_sales | store_id |
+| Stores | Returns | store_id |
+| Region | Stores | region_id |
+| Calendar | Fact_sales | Date → transaction_date |
+| Calendar | Returns | Date → return_date |
+
+---
+
+## 🧠 Schema Notes
+
+- The model primarily follows a **Star Schema design**.
+- A small **Snowflake structure** exists where the **Region** table connects to **Stores**.
+- This structure allows flexible analysis across:
+
+  - Customer demographics  
+  - Product performance  
+  - Regional sales  
+  - Time-based trends  
+  - Product return rates  
+
+This schema supports efficient analytical queries used in the **Power BI dashboard**.
 # 📊 Dashboard Features
 
 The Power BI dashboard includes:
