@@ -133,36 +133,47 @@ An interactive Power BI dashboard was created to visualize business performance 
 
 ---
 
+---
+
 # 🗂️ Data Model
 
-This project follows a **Star Schema data model**, commonly used in data warehousing and business intelligence systems.
+The database used in this project follows a **Star Schema** design, which is commonly used in **data warehousing and business intelligence systems**.
 
-The schema consists of **Fact Tables** that store transactional data and **Dimension Tables** that provide descriptive attributes used for analysis.
+This structure separates the data into:
 
-![Data Model](picture/data_model.png)
+- **Fact Tables** → store transactional data
+- **Dimension Tables** → store descriptive information used for filtering and analysis
+
+The model enables efficient analysis across **customers, products, stores, regions, and time**.
+
+![Retail Sales Data Model](picture/Diagram.png)
 
 ---
 
-## ⭐ Fact Tables
+# ⭐ Fact Tables
 
-### **Fact_sales**
+Fact tables contain measurable events such as sales and returns.
 
-The main transactional table that records every sales operation.
+## Fact_sales
+
+This is the main transactional table that records every product sale.
 
 | Column | Description |
 |------|-------------|
 | transaction_date | Date when the sale occurred |
 | stock_date | Date when the product was stocked |
-| product_id | Reference to the product sold |
-| customer_id | Reference to the customer |
-| store_id | Reference to the store |
+| product_id | Identifier of the sold product |
+| customer_id | Identifier of the customer |
+| store_id | Identifier of the store |
 | quantity | Number of units sold |
+
+This table connects to several dimension tables such as **Products, Customers, Stores, and Calendar**.
 
 ---
 
-### **Returns**
+## Returns
 
-Stores data about returned products.
+This table records product return transactions.
 
 | Column | Description |
 |------|-------------|
@@ -171,34 +182,50 @@ Stores data about returned products.
 | store_id | Store where the return occurred |
 | quantity | Number of returned units |
 
+This table is used to analyze **product return rates and product quality issues**.
+
 ---
 
-## 📊 Dimension Tables
+# 📊 Dimension Tables
 
-### **Customers**
+Dimension tables store descriptive attributes used for slicing and filtering data.
 
-Contains customer demographic information used for segmentation analysis.
+---
 
-Key attributes include:
+## Customers
+
+Contains demographic information about customers.
+
+Important attributes include:
 
 - customer_id (Primary Key)
 - customer_acct_num
 - first_name
 - last_name
+- customer_address
+- customer_city
+- customer_state_province
+- customer_postal_code
+- customer_country
 - birthdate
 - marital_status
 - yearly_income
 - gender
+- total_children
+- num_children_at_home
 - education
+- acct_open_date
+- member_card
 - occupation
 - homeowner
-- member_card
+
+This table allows analysis based on **customer demographics and socioeconomic attributes**.
 
 ---
 
-### **Products**
+## Products
 
-Stores information about the products sold.
+Stores detailed information about each product.
 
 Key attributes include:
 
@@ -212,11 +239,13 @@ Key attributes include:
 - recyclable
 - low_fat
 
+This table enables **product performance and profitability analysis**.
+
 ---
 
-### **Stores**
+## Stores
 
-Contains information about retail stores.
+Contains information about retail store locations.
 
 Key attributes include:
 
@@ -224,40 +253,54 @@ Key attributes include:
 - region_id
 - store_type
 - store_name
+- store_street_address
 - store_city
 - store_state
 - store_country
+- store_phone
 - first_opened_date
 - last_remodel_date
 - total_sqft
+- grocery_sqft
+
+This table allows analysis of **store performance and geographic distribution**.
 
 ---
 
-### **Region**
+## Region
 
-Defines geographical sales regions.
+Defines the geographical hierarchy of stores.
 
 | Column | Description |
 |------|-------------|
-| region_id | Primary key for region |
-| sales_district | Sales district |
-| sales_region | Sales region |
+| region_id | Primary key of the region |
+| sales_district | District name |
+| sales_region | Regional sales group |
+
+Stores are grouped into regions to analyze **regional sales performance**.
 
 ---
 
-### **Calendar**
+## Calendar
 
-Date dimension table used for time-based analysis.
+A date dimension used for time-based analysis.
 
 | Column | Description |
 |------|-------------|
-| Date | Primary key representing calendar date |
+| Date | Primary key representing a calendar date |
+
+This table enables analysis by:
+
+- Year
+- Quarter
+- Month
+- Day
 
 ---
 
-## 🔗 Relationships
+# 🔗 Relationships
 
-The schema follows **one-to-many relationships** between dimension tables and fact tables.
+The model uses **one-to-many relationships** between dimension tables and fact tables.
 
 | Dimension Table | Fact Table | Join Key |
 |----------------|------------|---------|
@@ -272,19 +315,25 @@ The schema follows **one-to-many relationships** between dimension tables and fa
 
 ---
 
-## 🧠 Schema Notes
+# 🧠 Schema Design Notes
 
-- The model primarily follows a **Star Schema design**.
-- A small **Snowflake structure** exists where the **Region** table connects to **Stores**.
-- This structure allows flexible analysis across:
+- The data model mainly follows a **Star Schema architecture**.
+- A small **Snowflake structure** exists where the **Region table connects to Stores** instead of connecting directly to fact tables.
+- This design improves query performance and supports complex analytical queries.
 
-  - Customer demographics  
-  - Product performance  
-  - Regional sales  
-  - Time-based trends  
-  - Product return rates  
+Using this schema, analysts can measure:
 
-This schema supports efficient analytical queries used in the **Power BI dashboard**.
+- Total Sales
+- Total Returns
+- Profit Margin
+- Sales by Region
+- Customer Segment Performance
+- Product Performance Over Time
+
+This data model serves as the foundation for the **Power BI dashboard and business insights generated in this project**.
+
+---
+
 # 📊 Dashboard Features
 
 The Power BI dashboard includes:
