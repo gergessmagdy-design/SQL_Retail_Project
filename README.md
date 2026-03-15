@@ -131,11 +131,15 @@ An interactive Power BI dashboard was created to visualize business performance 
 ---
 ---
 
+---
+
 # 🗂️ Data Model
 
 This project follows a **Star Schema data model**, commonly used in data warehousing and business intelligence systems.
 
 The schema consists of **Fact Tables** that store transactional data and **Dimension Tables** that provide descriptive attributes used for analysis.
+
+![Data Model](picture/data_model.png)
 
 ---
 
