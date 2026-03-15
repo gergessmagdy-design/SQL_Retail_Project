@@ -8,6 +8,24 @@ The project demonstrates the full **data analytics workflow**, including data pr
 
 ---
 
+# 🏗️ Project Architecture
+
+The project follows a complete **data analytics pipeline** from raw data to interactive business intelligence dashboards.
+
+Retail Excel Data  
+↓  
+SQL Server (Data Cleaning & Transformation)  
+↓  
+Star Schema Data Model  
+↓  
+SQL Analytical Queries & Views  
+↓  
+Power BI Dashboard  
+
+This architecture ensures that the data flows through a structured process before being visualized for business insights.
+
+---
+
 # 📂 Dataset Structure
 
 The dataset used in this project consists of multiple tables representing different aspects of the retail business, including customers, products, sales transactions, and returns.
@@ -342,6 +360,57 @@ The Power BI dashboard includes:
 
 ---
 
+# ▶️ How to Run the Project
+
+Follow these steps to run the project locally:
+
+1. Import the dataset tables into **SQL Server**.
+2. Execute the SQL scripts located in the **SQL folder**.
+3. Build the data model according to the provided schema.
+4. Open the **Power BI (.pbix)** file located in the PowerBI folder.
+5. Refresh the data connection to load the dataset.
+
+Once the data is refreshed, the **Power BI dashboard will automatically populate all KPIs and visualizations.**
+
+---
+
+# 📁 Repository Structure
+
+Retail-Sales-Analytics
+│
+├── SQL
+│   ├── data_cleaning.sql
+│   ├── data_model.sql
+│   └── analytical_queries.sql
+│
+├── PowerBI
+│   └── Retail_Dashboard.pbix
+│
+├── picture
+│   ├── Diagram.png
+│   ├── pic_1.png
+│   ├── pic_2.png
+│   └── pic_3.png
+│
+└── README.md
+
+This structure keeps the project organized and makes it easier for analysts and developers to navigate the repository.
+
+---
+
+# 🖼 Dashboard Preview
+
+<!-- Use HTML for bigger images on GitHub -->
+<p align="center">
+  <img src="picture/Diagram.png" width="700"/>
+  <br>
+  <img src="picture/pic_1.png" width="300"/>
+  <img src="picture/pic_2.png" width="300"/>
+  <img src="picture/pic_3.png" width="300"/>
+</p>
+
+---
+
 # 📸 Dashboard Preview
 
 |    **Dashboard Overview**    | **Customer Demographic & Behavioral Analysis** |  **Key Analytical Insights** |
@@ -358,6 +427,18 @@ The Power BI dashboard includes:
 * Power BI Dashboard Development
 * Customer Segmentation Analysis
 * Data Visualization & Storytelling
+
+---
+
+# 🔮 Future Improvements
+
+Possible future improvements for this project include:
+
+- Adding **sales forecasting using predictive analytics**
+- Building **Customer Lifetime Value (CLV) analysis**
+- Integrating **real-time data pipelines**
+- Expanding the dataset to include **multiple years of sales**
+- Adding **advanced Power BI features such as drill-through and tooltips**
 
 ---
 
