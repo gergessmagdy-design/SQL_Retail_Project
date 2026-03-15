@@ -129,11 +129,6 @@ An interactive Power BI dashboard was created to visualize business performance 
 * Product return analysis
 
 ---
----
-
----
-
----
 
 # 🗂️ Data Model
 
