@@ -179,6 +179,8 @@ This is the main transactional table that records every product sale.
 | customer_id | Identifier of the customer |
 | store_id | Identifier of the store |
 | quantity | Number of units sold |
+| Amount | Total Sales Value For The Transaction |
+| Profit | Profit Generated From The Transaction |
 
 This table connects to several dimension tables such as **Products, Customers, Stores, and Calendar**.
 
